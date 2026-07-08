@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о ЖК — Агентство «Балдеж»</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container-jk { max-width: 1200px; margin: 0 auto; padding: 40px 20px; color: #fff; }
+        
+        .back-btn-jk { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background: #222; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            margin-bottom: 30px; 
+            font-weight: bold;
+            border: 1px solid #333;
+            transition: 0.3s; 
+        }
+        .back-btn-jk:hover { background: #ff6f00; border-color: #ff6f00; }
+        
+        .main-info-jk { display: flex; gap: 40px; margin-bottom: 50px; align-items: center; }
+        .info-img-jk { flex: 1; max-height: 450px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .info-text-jk { flex: 1; }
+        .info-text-jk h1 { font-size: 2.8rem; margin: 0 0 10px 0; color: #fff; }
+        .info-text-jk .district-jk { color: #ff6f00; font-size: 1.3rem; margin-bottom: 20px; font-weight: bold; }
+        .info-text-jk .description-jk { line-height: 1.7; color: #ccc; font-size: 1.05rem; }
+
+        .lots-table-jk { width: 100%; border-collapse: collapse; background: #1a1a1a; border-radius: 12px; overflow: hidden; margin-top: 20px; }
+        .lots-table-jk th, .lots-table-jk td { padding: 18px 20px; text-align: left; }
+        .lots-table-jk th { background: #262626; color: #aaa; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        .lots-table-jk tr { border-bottom: 1px solid #2b2b2b; transition: 0.2s; }
+        .lots-table-jk tr:hover { background: #222; }
+        .lots-table-jk tr:last-child { border-bottom: none; }
+        
+        .buy-btn-jk { display: inline-block; padding: 10px 20px; background: #ff6f00; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.2s; text-align: center;}
+        .buy-btn-jk:hover { background: #e65c00; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <div class="container-jk">
+        <a href="index.html" class="back-btn-jk">← Назад на главную</a>
+
+        <div class="main-info-jk">
+            <img id="jk-image" src="" alt="" class="info-img-jk">
+            <div class="info-text-jk">
+                <h1 id="jk-title">Загрузка...</h1>
+                <div id="jk-district" class="district-jk"></div>
+                <p id="jk-description" class="description-jk"></p>
+            </div>
+        </div>
+
+        <div class="lots-section">
+            <h2 class="section-title">Доступные лоты квартир в этом ЖК</h2>
+            <table class="lots-table-jk">
+                <thead>
+                    <tr>
+                        <th>Тип жилья</th>
+                        <th>Площадь</th>
+                        <th>Этаж</th>
+                        <th>Стоимость</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody id="lots-container">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="building.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог предложений — Агентство Балдеж</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-block">
+                <div class="logo-icon">
+                <img src="image/logo.png" alt="Логотип Агентства" class="logo-img">
+                </div>
+                <div class="logo-text">Агенство<br>«Балдеж»</div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Поиск в каталоге">
+                <div class="category-buttons">
+                    <button class="cat-btn" id="btn-flat">Квартиры</button>
+                    <button class="cat-btn" id="btn-house">Дома</button>
+                    <button class="cat-btn" id="btn-office">Офисы</button>
+                    <button class="cat-btn" id="btn-garage">Гаражи</button>
+                </div>
+            </div>
+
+            <div class="top-actions">
+                <a href="index.html" class="btn-orange link-btn" style="background-color: #333;">← На главную</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="left-side">
+                
+                <section class="lots-section" style="margin-top: 0;">
+                    <h2 class="section-title" id="lotsTitle">Загрузка предложений...</h2>
+                    <div class="lots-list" id="lotsContainer">
+                        </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function goToContactPage(lotName) {
+            window.location.href = 'contact.html?lot=' + encodeURIComponent(lotName);
+        }
+
+        function renderLots(categoryName) {
+            var container = document.getElementById('lotsContainer');
+            var title = document.getElementById('lotsTitle');
+            
+            title.textContent = 'Каталог предложений: ' + categoryName;
+            container.innerHTML = '';
+            
+            var targetData = [];
+            
+            if (categoryName === 'Квартиры') {
+                targetData = [
+                    { name: '1-комнатная квартира в ЖК «Луч»', details: '42 м², 7/17 этаж, евроремонт, Харьковская гора', price: '4 200 000 ₽' },
+                    { name: '2-комнатная квартира в ЖК «Привилегия»', details: '65 м², 3/12 этаж, черновая отделка, Центр', price: '6 500 000 ₽' },
+                    { name: 'Студия в ЖК «Парковый»', details: '28 м², 10/10 этаж, с мебелью, район парка Ленина', price: '3 100 000 ₽' },
+                    { name: '3-комнатная квартира на ул. Есенина', details: '82 м², 5/9 этаж, отличный косметический ремонт', price: '5 900 000 ₽' },
+                    { name: '1-комнатная квартира на пр-те Ватутина', details: '38 м², 2/5 этаж, теплый кирпичный дом', price: '2 950 000 ₽' },
+                    { name: '3-комнатная квартира в ЖК «Белые Горы»', details: '74 м², 12/16 этаж, панорамные окна на реку', price: '7 800 000 ₽' },
+                    { name: '2-комнатная квартира на Свято-Троицком бульваре', details: '58 м², 4/7 этаж, сталинка с высокими потолками', price: '5 100 000 ₽' },
+                    { name: 'Студия в ЖК «Гранд Парк»', details: '31 м², 8/14 этаж, современный ремонт', price: '3 400 000 ₽' },
+                    { name: '4-комнатная квартира на ул. Костюкова', details: '96 м², 6/9 этаж, идеальный вариант для большой семьи', price: '6 800 000 ₽' },
+                    { name: '1-комнатная квартира в мкр. Улитка', details: '40 м², 3/5 этаж, индивидуальное отопление', price: '3 650 000 ₽' }
+                ];
+            } else if (categoryName === 'Дома') {
+                targetData = [
+                    { name: 'Современный коттедж в пос. Дубовое', details: '140 м², 8 соток, все центральные коммуникации', price: '9 300 000 ₽' },
+                    { name: 'Уютный таунхаус в мкр. Улитка', details: '110 м², 3 сотки, два этажа, чистовая отделка', price: '7 150 000 ₽' },
+                    { name: 'Дачный дом в СНТ «Фазаны»', details: '45 м², 6 соток, свет круглый год, сезонный водопровод', price: '1 200 000 ₽' },
+                    { name: 'Коттедж в пос. Таврово-4', details: '180 м², 10 соток, под чистовую отделку, гараж на 2 авто', price: '11 500 000 ₽' },
+                    { name: 'Дом в пос. Разумное', details: '120 м², 15 соток, ухоженный сад, кирпичный забор', price: '6 800 000 ₽' },
+                    { name: 'Двухэтажный дом в пос. Майский', details: '160 м², 12 соток, на участке баня и беседка', price: '8 900 000 ₽' },
+                    { name: 'Элитный коттедж в пос. Новосадовый', details: '200 м², 10 соток, эксклюзивный дизайнерский ремонт', price: '14 200 000 ₽' },
+                    { name: 'Небольшой дом на ул. Везельская', details: '75 м², 4 сотки, в черте города, центральная канализация', price: '4 500 000 ₽' },
+                    { name: 'Дом в пос. Северный', details: '130 м², 7 соток, система "теплый пол", готов к заселению', price: '5 950 000 ₽' },
+                    { name: 'Загородная усадьба в пос. Соломино', details: '250 м², 20 соток, шикарный вид на водохранилище', price: '22 000 000 ₽' }
+                ];
+            } else if (categoryName === 'Офисы') {
+                targetData = [
+                    { name: 'Офисное помещение на Гражданском проспекте', details: '52 м², 2 этаж, кондиционер, общая парковка', price: '4 800 000 ₽' },
+                    { name: 'Торговая площадь на ул. Богдана Хмельницкого', details: '90 м², 1 этаж, отдельный вход, высокий трафик', price: '9 500 000 ₽' },
+                    { name: 'Небольшой кабинет на ул. Попова', details: '18 м², 3 этаж, современный офисный центр', price: '1 100 000 ₽' },
+                    { name: 'Офисный блок на ул. Щорса', details: '120 м², кабинетная система, высокоскоростной интернет', price: '7 200 000 ₽' },
+                    { name: 'Помещение свободного назначения на ул. Губкина', details: '45 м², 1 этаж, под парикмахерскую или аптеку', price: '3 900 000 ₽' },
+                    { name: 'Склад-офис на Белгородском проспекте', details: '150 м², цокольный этаж, удобный подъезд для разгрузки', price: '6 500 000 ₽' },
+                    { name: 'Офис в бизнес-центре на пр-те Славы', details: '65 м², евроремонт, круглосуточная охрана', price: '5 400 000 ₽' },
+                    { name: 'Торговый павильон на рынке «Семейный»', details: '30 м², проходной ряд, полностью готов к работе', price: '1 800 000 ₽' }
+                ];
+            } else if (categoryName === 'Гаражи') {
+                targetData = [
+                    { name: 'Капитальный кирпичный гараж ГСК «Луч»', details: '24 м², смотровая яма, сухой подвал по всему периметру', price: '450 000 ₽' },
+                    { name: 'Металлический гараж на Харьковской горе', details: '18 м², свет проведен, удобный въезд', price: '130 000 ₽' },
+                    { name: 'Двухуровневый гараж в ГСК «Космос»', details: '40 м², подвал, обустроенная мастерская', price: '750 000 ₽' },
+                    { name: 'Гараж на ул. Студенческая', details: '22 м², охраняемая территория, видеонаблюдение', price: '380 000 ₽' },
+                    { name: 'Подземный паркинг в ЖК «Привилегия»', details: '16 м², отапливаемый, автоматические ворота', price: '1 200 000 ₽' },
+                    { name: 'Капитальный гараж в районе Крейды', details: '26 м², высокие ворота под микроавтобус', price: '520 000 ₽' },
+                    { name: 'Гараж в ГСК «Автомобилист»', details: '20 м², новый счетчик, крыша перекрыта в прошлом году', price: '290 000 ₽' },
+                    { name: 'Металлический гараж на ул. Железнякова', details: '19 м², без ямы, на вывоз или долгосрочную аренду земли', price: '95 000 ₽' }
+                ];
+            }
+
+            for (var m = 0; m < targetData.length; m++) {
+                var lot = targetData[m];
+                var rowHtml = '<div class="lot-row">' +
+                                '<div class="lot-name">' + lot.name + '</div>' +
+                                '<div class="lot-details">' + lot.details + '</div>' +
+                                '<div class="lot-price">' + lot.price + '</div>' +
+                                '<button class="btn-orange lot-btn" onclick="goToContactPage(\'' + lot.name + '\')">Связаться</button>' +
+                              '</div>';
+                container.innerHTML += rowHtml;
+            }
+
+            var categoryButtons = document.querySelectorAll('.cat-btn');
+            for (var j = 0; j < categoryButtons.length; j++) {
+                categoryButtons[j].classList.remove('active');
+                if (categoryButtons[j].textContent.trim() === categoryName) {
+                    categoryButtons[j].classList.add('active');
+                }
+            }
+        }
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var currentCat = urlParams.get('cat');
+
+        if (!currentCat) {
+            currentCat = 'Квартиры';
+        }
+
+        renderLots(currentCat);
+
+        var pageButtons = document.querySelectorAll('.cat-btn');
+        for (var k = 0; k < pageButtons.length; k++) {
+            pageButtons[k].addEventListener('click', function() {
+                var clickedCategory = this.textContent.trim();
+                renderLots(clickedCategory);
+                window.history.pushState({}, '', 'lots.html?cat=' + encodeURIComponent(clickedCategory));
+            });
+        }
+    </script>
+</body>
+</html>

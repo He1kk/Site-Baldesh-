@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Связаться с нами — Агентство Балдеж</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-block">
+                <div class="logo-icon">
+                <img src="image/logo.png" alt="Логотип Агентства" class="logo-img">
+                </div>
+                <div class="logo-text">Агенство<br>«Балдеж»</div>
+            </div>
+
+            <div class="top-actions">
+                <a href="lots.html" class="btn-orange link-btn" style="background-color: #333;">← К каталогу</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <div class="left-side">
+                <section class="form-section">
+                    <h2 class="section-title">Форма обратной связи</h2>
+                    <p style="color: #aaa; margin-bottom: 20px; font-size: 14px;">
+                        Заполните поля ниже, и наши специалисты свяжутся с вами в течение 15 минут.
+                    </p>
+
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label class="form-label">Ваше имя *</label>
+                            <input type="text" class="form-input-field" placeholder="Иван" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Номер телефона *</label>
+                            <input type="tel" class="form-input-field" placeholder="+79999999999" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Выбранный объект недвижимости</label>
+                            <input type="text" id="lotSubject" class="form-input-field" style="background-color: #333; color: #ff6f00; font-weight: bold;" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Комментарий или вопрос</label>
+                            <textarea class="form-textarea-field" rows="4" placeholder="Здравствуйте! Хочу посмотреть этот объект на выходных..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-orange submit-form-btn">Отправить заявку в Балдеж</button>
+                    </form>
+                </section>
+            </div>
+
+            <aside class="sidebar" style="height: auto;">
+                <div class="contact-card">
+                    <h3>Прямая связь</h3>
+                    <p style="margin-top: 15px;">Вы можете позвонить нам прямо сейчас:</p>
+                    <a href="tel:+74722301211" class="contact-phone-link"> +79999999999</a>
+                    
+                    <hr style="border-color: #333; margin: 15px 0;">
+                    
+                    <p><strong>Наш главный офис:</strong></p>
+                    <p style="color: #aaa; font-size: 14px; margin-top: 5px;">
+                        г. Белгород, ул. Победы, д. 85
+                    </p>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var chosenLot = urlParams.get('lot');
+        
+        var lotInputField = document.getElementById('lotSubject');
+
+        if (chosenLot && lotInputField) {
+            lotInputField.value = chosenLot;
+        } else if (lotInputField) {
+            lotInputField.value = 'Общая консультация по недвижимости';
+        }
+
+        var form = document.getElementById('feedbackForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+                
+                alert('Успешно! Ваша заявка по объекту \n"' + lotInputField.value + '" принята. \nМенеджер уже берет трубку!');
+                
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+</body>
+</html>

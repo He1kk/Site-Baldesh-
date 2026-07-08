@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агентство Балдеж</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-block">
+                <div class="logo-icon">
+                    <img src="image/logo.png" alt="Логотип Агентства" class="logo-img">
+                </div>
+                <div class="logo-text">Агенство<br>«Балдеж»</div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Поиск">
+                <div class="category-buttons">
+                    <button class="cat-btn">Квартиры</button>
+                    <button class="cat-btn">Дома</button>
+                    <button class="cat-btn">Офисы</button>
+                    <button class="cat-btn">Гаражи</button>
+                </div>
+            </div>
+
+            <div class="top-actions">
+                <button class="btn-orange">Войти или зарегистрироваться</button>
+                <button class="btn-orange">Открыть карту</button>
+                
+                <div class="dropdown">
+                    <button class="btn-orange dropdown-btn" id="regionBtn">Белгород ▾</button>
+                    <div class="dropdown-content" id="regionDropdown">
+                        <div class="dropdown-item">Белгород</div>
+                        <div class="dropdown-item">Старый Оскол</div>
+                        <div class="dropdown-item">Строитель</div>
+                        <div class="dropdown-item">Северный</div>
+                        <div class="dropdown-item">Разумное</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <div class="left-side">
+                <h2 class="main-title">Популярные новостройки в Белгороде:</h2>
+                
+                <div class="novostroy-grid">
+                    <a href="building.html?id=luch" class="building-card card-1">
+                        <img src="image/1lych.png" alt="ЖК Луч" class="building-card-img">
+                        <div class="card-content">
+                            <h3>ЖК «Луч»</h3>
+                            <p>Харьковская гора</p>
+                        </div>
+                    </a>
+                    
+                    <a href="building.html?id=privilegiya" class="building-card card-2">
+                        <img src="image/2privelegiya.png" alt="ЖК Привилегия" class="building-card-img">
+                        <div class="card-content">
+                            <h3>ЖК «Привилегия»</h3>
+                            <p>Центральный район</p>
+                        </div>
+                    </a>
+            
+                    <a href="building.html?id=parkoviy" class="building-card card-3">
+                        <img src="image/3parkoviy.png" alt="ЖК Парковый" class="building-card-img">
+                        <div class="card-content">
+                            <h3>ЖК «Парковый»</h3>
+                            <p>Район парка Ленина</p>
+                        </div>
+                    </a>
+           
+                    <a href="building.html?id=grand_park" class="building-card card-4">
+                        <img src="image/4grandpark.png" alt="ЖК Гранд Парк" class="building-card-img">
+                        <div class="card-content">
+                            <h3>ЖК «Гранд Парк»</h3>
+                            <p>Район парка Ленина</p>
+                        </div>
+                    </a>
+         
+                    <a href="building.html?id=belye_gory" class="building-card card-5">
+                        <img src="image/5beliegori.png" alt="ЖК Белые Горы" class="building-card-img">
+                        <div class="card-content">
+                            <h3>ЖК «Белые Горы»</h3>
+                            <p>Исторический микрорайон</p>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="contact.html" class="btn-orange main-action-btn link-btn">Поможем подобрать недвижимость бесплатно!</a>
+
+                <section class="sales-section">
+                    <h2 class="section-title">Последние успешные сделки</h2>
+                    <div class="sales-grid">
+                        <div class="sale-card">
+                            <div class="sale-badge">Продано</div>
+                            <div class="sale-info">
+                                <h3>ЖК «Парковый»</h3>
+                                <p class="sale-desc">1-комнатная квартира, 42 м²</p>
+                                <div class="sale-price">3 950 000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="sale-card">
+                            <div class="sale-badge">Продано</div>
+                            <div class="sale-info">
+                                <h3>Харьковская гора</h3>
+                                <p class="sale-desc">2-комнатная квартира, 56 м²</p>
+                                <div class="sale-price">5 200 000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="sale-card">
+                            <div class="sale-badge">Продано</div>
+                            <div class="sale-info">
+                                <h3>Улитка</h3>
+                                <p class="sale-desc">4-комнатная квартира, 120 м²</p>
+                                <div class="sale-price">11 400 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="office-section">
+                    <h2 class="section-title">Наш офис в Белгороде</h2>
+                    <div class="office-container">
+                        <div class="office-info">
+                            <p class="office-text"><strong>Адрес:</strong> г. Белгород, ул. Победы, д. 85</p>
+                            <p class="office-text"><strong>Телефон:</strong> +79999999999</p>
+                            <p class="office-text"><strong>Режим работы:</strong> Пн-Пт: 09:00-19:00, Сб: 10:00-16:00</p>
+                        </div>
+                        <div class="office-map">
+                            <iframe src="https://yandex.ru/map-widget/v1/?text=Россия, Белгород, улица Победы, 85&z=16" width="100%" height="230" frameborder="0" allowfullscreen="true" style="position:relative; border-radius: 8px;"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-placeholder">
+                    <div class="adv-text">Тут могла быть ваша реклама</div>
+                </div>
+                <div class="sidebar-actions">
+                    <button class="btn-orange">Наши соц. сети</button>
+                    <a href="about.html" class="btn-orange link-btn">О нас</a>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <script>
+        var regionBtn = document.getElementById('regionBtn');
+        var regionDropdown = document.getElementById('regionDropdown');
+
+        if (regionBtn && regionDropdown) {
+            regionBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                regionDropdown.classList.toggle('show');
+            });
+            var dropdownItems = regionDropdown.querySelectorAll('.dropdown-item');
+            for (var i = 0; i < dropdownItems.length; i++) {
+                dropdownItems[i].addEventListener('click', function(e) {
+                    var selectedCity = e.target.textContent;
+                    regionBtn.textContent = selectedCity + ' ▾';
+                    regionDropdown.classList.remove('show');
+                });
+            }
+
+            document.addEventListener('click', function() {
+                regionDropdown.classList.remove('show');
+            });
+        }
+
+        var categoryButtons = document.querySelectorAll('.cat-btn');
+        for (var k = 0; k < categoryButtons.length; k++) {
+            categoryButtons[k].addEventListener('click', function() {
+                var categoryName = this.textContent.trim();
+                window.location.href = 'lots.html?cat=' + encodeURIComponent(categoryName);
+            });
+        }
+    </script>
+</body>
+</html>
