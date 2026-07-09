@@ -86,17 +86,6 @@
         } else if (lotInputField) {
             lotInputField.value = 'Общая консультация по недвижимости';
         }
-
-        var form = document.getElementById('feedbackForm');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); 
-                
-                alert('Успешно! Ваша заявка по объекту \n"' + lotInputField.value + '" принята. \nМенеджер уже берет трубку!');
-                
-                window.location.href = 'index.html';
-            });
-        }
     </script>
 </body>
 </html>
