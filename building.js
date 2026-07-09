@@ -79,7 +79,7 @@ if (currentJk) {
             <td>${lot.floor}</td>
             <td style="color: #ff6f00; font-weight: bold;">${lot.price}</td>
             <td>
-                <a href="contact.html?object=${orderDetails}" class="buy-btn-jk">Оставить заявку</a>
+                <a href="contact.html?lot=${orderDetails}" class="buy-btn-jk">Оставить заявку</a>
             </td>
         `;
         lotsContainer.appendChild(row);
